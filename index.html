@@ -3,30 +3,117 @@
 <title>Flotilha BRA 333 • Wingfoil</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css"></head><body>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
 <header class="top"><div class="wrap nav">
   <a class="brand" href="./"><img class="logo" src="assets/logo.png" alt="BRA 333"><span>FLOTILHA BRA 333</span></a>
-  <nav class="menu"><a href="vento.html">Vento</a><a href="calendario.html">Calendário</a><a href="videos.html">Vídeos</a><a href="classificados.html">Classificados</a><a href="links.html">Links</a></nav>
-</div></header><main class="wrap">
-<section class="hero">
-  <div>
-    <h1>Wingfoil • Flotilha BRA 333</h1>
-    <p>Previsão de vento, calendário, vídeos e classificados — tudo num só lugar.</p>
-    <p><a class="btn primary" href="vento.html">Ver vento agora</a></p>
+  <nav class="menu">
+    <a href="vento.html">Vento</a>
+    <a href="calendario.html">Calendário</a>
+    <a href="classificados.html">Classificados</a>
+    <a href="videos.html">Vídeos</a>
+    <a href="links.html">Links</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero hero-photo">
+    <div class="hero-content">
+      <h1>Wingfoil no Rio • Flotilha <span class="accent">BRA 333</span></h1>
+      <p>Condições de vento, calendário de treinos e regatas, vídeos de aprendizado e classificados — tudo em um só lugar.</p>
+      <div class="cta">
+        <a class="btn primary" href="#vento-hoje">Vento de hoje</a>
+        <a class="btn ghost" href="calendario.html">Ver calendário</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VENTO HOJE -->
+  <section id="vento-hoje" class="card wind-today">
+    <div class="wind-left">
+      <h2>Condições de vento • hoje</h2>
+      <p class="muted">Resumo rápido para decidir se vale a água.</p>
+      <!-- Estes chips são só um “resumo humano” para leitura rápida.
+           Se quiser, edite os valores abaixo quando necessário. -->
+      <div class="chips">
+        <div class="chip"><span>🌬️ Vento</span><strong>12–18 kt</strong></div>
+        <div class="chip"><span>🧭 Direção</span><strong>SE ↗︎</strong></div>
+        <div class="chip"><span>🌡️ Temp</span><strong>24–27 °C</strong></div>
+        <div class="chip"><span>🌊 Maré/onda</span><strong>baixa/moderada</strong></div>
+      </div>
+      <div class="tip muted">Dica: veja o mapa ao lado para o detalhe hora a hora (Windy) e, se precisar, abra a página <a href="vento.html">Vento</a> com Windguru completo.</div>
+      <div class="inline-cta">
+        <a class="btn small" href="vento.html">Detalhe completo</a>
+        <a class="btn small ghost" target="_blank" rel="noopener" href="https://www.windy.com/?-22.95,-43.17,11">Abrir no Windy</a>
+      </div>
+    </div>
+    <div class="wind-right">
+      <!-- Windy compacto no home -->
+      <div class="embed small">
+        <iframe
+          title="Windy - Urca / Botafogo"
+          src="https://embed.windy.com/embed2.html?lat=-22.95&lon=-43.17&detailLat=-22.95&detailLon=-43.17&zoom=11&level=surface&overlay=wind&product=ecmwf&marker=true&detail=true&metricWind=kt&metricTemp=%C2%B0C">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE A FLOTILHA -->
+  <section class="about card">
+    <div class="about-text">
+      <h2>Sobre a Flotilha</h2>
+      <p>A Flotilha <strong>BRA 333</strong> nasceu em <em>[ano]</em> reunindo praticantes de wingfoil no Rio de Janeiro com o objetivo de treinar juntos, organizar regatas e fortalecer a comunidade. Desde então, promovemos encontros regulares, clínicas de evolução e participações em eventos nacionais.</p>
+      <p>O foco é <strong>evolução técnica com segurança</strong>, integração entre níveis (do iniciante ao avançado) e apoio para quem quer entrar no esporte. Se quiser participar, confira o <a href="calendario.html">calendário</a> e entre no próximo treino.</p>
+      <div class="inline-cta">
+        <a class="btn primary" href="calendario.html">Ver próximas sessões</a>
+        <a class="btn ghost" href="classificados.html">Ver classificados</a>
+      </div>
+    </div>
+    <div class="about-photo">
+      <img src="assets/photos/hero.jpg" alt="BRA 333 em ação" onerror="this.src='assets/logo.png'">
+    </div>
+  </section>
+
+  <!-- FOTOS (CARROSSEL) -->
+  <section class="gallery card">
+    <div class="gallery-head">
+      <h2>Fotos recentes</h2>
+      <div class="gallery-ctrls">
+        <button class="arrow" aria-label="Anterior" onclick="prevPhoto()">‹</button>
+        <button class="arrow" aria-label="Próxima" onclick="nextPhoto()">›</button>
+      </div>
+    </div>
+    <div class="gallery-stage">
+      <img id="galleryPhoto" src="assets/photos/1.jpg" alt="Galeria BRA 333" onerror="this.src='assets/logo.png'">
+    </div>
+    <p class="muted small">Dica: coloque suas imagens em <code>assets/photos/</code> (1.jpg, 2.jpg, 3.jpg…).</p>
+  </section>
+
+</main>
+
+<footer class="foot"><div class="wrap foot-inner">
+  <div>© <span id="y"></span> Flotilha BRA 333</div>
+  <div class="foot-links">
+    <a href="vento.html">Vento</a>
+    <a href="calendario.html">Calendário</a>
+    <a href="classificados.html">Classificados</a>
   </div>
-  <div class="card">
-    <h2>Atalhos</h2>
-    <ul>
-      <li><a href="calendario.html">Calendário</a></li>
-      <li><a href="classificados.html">Classificados</a></li>
-      <li><a href="videos.html">Vídeos</a></li>
-      <li><a href="links.html">Links úteis</a></li>
-    </ul>
-  </div>
-</section>
-<section class="cards">
-  <div class="card"><h3>Vento</h3><p>Windy + Windguru integrados.</p><a class="btn" href="vento.html">Abrir</a></div>
-  <div class="card"><h3>Calendário</h3><p>Sincronize com seu Google Agenda.</p><a class="btn" href="calendario.html">Ver</a></div>
-  <div class="card"><h3>Classificados</h3><p>Compra e venda com moderação simples.</p><a class="btn" href="classificados.html">Anunciar</a></div>
-</section>
-</main><footer class="foot"><div class="wrap foot-inner"><div>© <span id="y"></span> Flotilha BRA 333</div></div></footer><script>document.getElementById('y').textContent=new Date().getFullYear()</script></body></html>
+</div></footer>
+
+<script>
+  // ano no rodapé
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Carrossel ultra-simples (apenas troca de imagem por nome sequencial)
+  const PHOTOS = ["assets/photos/1.jpg","assets/photos/2.jpg","assets/photos/3.jpg","assets/photos/4.jpg"];
+  let idx = 0;
+  const img = document.getElementById('galleryPhoto');
+  function show(i){ idx = (i+PHOTOS.length)%PHOTOS.length; img.src = PHOTOS[idx]; }
+  function nextPhoto(){ show(idx+1); }
+  function prevPhoto(){ show(idx-1); }
+  // auto-avança a cada 6s, se as fotos existirem
+  setInterval(()=>{ if (PHOTOS.length>1) nextPhoto(); }, 6000);
+</script>
+</body></html>
