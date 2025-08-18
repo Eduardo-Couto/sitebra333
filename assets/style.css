@@ -79,7 +79,7 @@ nav a:hover {
 }
 .hero-art img {
   width: 100%;
-  max-width: 480px;   /* ajuste: reduza/aumente este valor */
+  max-width: 240px;   /* ajuste: reduza/aumente este valor */
   height: auto;
   border-radius: 16px;
   box-shadow: 0 12px 32px rgba(0,0,0,.12);
