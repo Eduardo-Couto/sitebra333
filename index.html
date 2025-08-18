@@ -18,7 +18,7 @@
 
 <main class="wrap">
 
-  <!-- HERO -->
+  <!-- HERO COM IMAGEM LATERAL -->
   <section class="hero hero-photo">
     <div class="hero-content">
       <h1>Wingfoil no Rio • Flotilha <span class="accent">BRA 333</span></h1>
@@ -28,6 +28,11 @@
         <a class="btn ghost" href="calendario.html">Ver calendário</a>
       </div>
     </div>
+
+    <!-- imagem nova (arquivo exclusivo para o hero lateral) -->
+    <div class="hero-art">
+      <img src="assets/photos/flotilha-lado.png" alt="Flotilha BRA 333 velejando">
+    </div>
   </section>
 
   <!-- VENTO HOJE -->
@@ -35,22 +40,19 @@
     <div class="wind-left">
       <h2>Condições de vento • hoje</h2>
       <p class="muted">Resumo rápido para decidir se vale a água.</p>
-      <!-- Estes chips são só um “resumo humano” para leitura rápida.
-           Se quiser, edite os valores abaixo quando necessário. -->
       <div class="chips">
         <div class="chip"><span>🌬️ Vento</span><strong>12–18 kt</strong></div>
         <div class="chip"><span>🧭 Direção</span><strong>SE ↗︎</strong></div>
         <div class="chip"><span>🌡️ Temp</span><strong>24–27 °C</strong></div>
         <div class="chip"><span>🌊 Maré/onda</span><strong>baixa/moderada</strong></div>
       </div>
-      <div class="tip muted">Dica: veja o mapa ao lado para o detalhe hora a hora (Windy) e, se precisar, abra a página <a href="vento.html">Vento</a> com Windguru completo.</div>
+      <div class="tip muted">Veja o mapa ao lado para o detalhe hora a hora (Windy). Para mais dados, abra a página <a href="vento.html">Vento</a>.</div>
       <div class="inline-cta">
         <a class="btn small" href="vento.html">Detalhe completo</a>
         <a class="btn small ghost" target="_blank" rel="noopener" href="https://www.windy.com/?-22.95,-43.17,11">Abrir no Windy</a>
       </div>
     </div>
     <div class="wind-right">
-      <!-- Windy compacto no home -->
       <div class="embed small">
         <iframe
           title="Windy - Urca / Botafogo"
@@ -64,11 +66,11 @@
   <section class="about card">
     <div class="about-text">
       <h2>Sobre a Flotilha</h2>
-      <p>A Flotilha <strong>BRA 333</strong> nasceu em <em>[ano]</em> reunindo praticantes de wingfoil no Rio de Janeiro com o objetivo de treinar juntos, organizar regatas e fortalecer a comunidade. Desde então, promovemos encontros regulares, clínicas de evolução e participações em eventos nacionais.</p>
-      <p>O foco é <strong>evolução técnica com segurança</strong>, integração entre níveis (do iniciante ao avançado) e apoio para quem quer entrar no esporte. Se quiser participar, confira o <a href="calendario.html">calendário</a> e entre no próximo treino.</p>
+      <p>A Flotilha <strong>BRA 333</strong> nasceu em <em>[ano]</em> reunindo praticantes de wingfoil no Rio de Janeiro para treinar juntos, organizar regatas e fortalecer a comunidade. Promovemos encontros regulares, clínicas e participações em eventos nacionais.</p>
+      <p>Nosso foco é <strong>evolução técnica com segurança</strong>, integração de todos os níveis e apoio para quem quer entrar no esporte. Para participar, veja o <a href="calendario.html">calendário</a> e apareça no próximo treino.</p>
       <div class="inline-cta">
-        <a class="btn primary" href="calendario.html">Ver próximas sessões</a>
-        <a class="btn ghost" href="classificados.html">Ver classificados</a>
+        <a class="btn primary" href="calendario.html">Próximas sessões</a>
+        <a class="btn ghost" href="classificados.html">Classificados</a>
       </div>
     </div>
     <div class="about-photo">
@@ -88,7 +90,7 @@
     <div class="gallery-stage">
       <img id="galleryPhoto" src="assets/photos/1.jpg" alt="Galeria BRA 333" onerror="this.src='assets/logo.png'">
     </div>
-    <p class="muted small">Dica: coloque suas imagens em <code>assets/photos/</code> (1.jpg, 2.jpg, 3.jpg…).</p>
+    <p class="muted small">Coloque suas imagens em <code>assets/photos/</code> (1.jpg, 2.jpg, 3.jpg…)</p>
   </section>
 
 </main>
@@ -103,17 +105,15 @@
 </div></footer>
 
 <script>
-  // ano no rodapé
   document.getElementById('y').textContent = new Date().getFullYear();
 
-  // Carrossel ultra-simples (apenas troca de imagem por nome sequencial)
+  // carrossel simples
   const PHOTOS = ["assets/photos/1.jpg","assets/photos/2.jpg","assets/photos/3.jpg","assets/photos/4.jpg"];
   let idx = 0;
   const img = document.getElementById('galleryPhoto');
-  function show(i){ idx = (i+PHOTOS.length)%PHOTOS.length; img.src = PHOTOS[idx]; }
+  function show(i){ idx=(i+PHOTOS.length)%PHOTOS.length; img.src=PHOTOS[idx]; }
   function nextPhoto(){ show(idx+1); }
   function prevPhoto(){ show(idx-1); }
-  // auto-avança a cada 6s, se as fotos existirem
-  setInterval(()=>{ if (PHOTOS.length>1) nextPhoto(); }, 6000);
+  setInterval(()=>{ if(PHOTOS.length>1) nextPhoto(); }, 6000);
 </script>
 </body></html>
